@@ -25,8 +25,8 @@ puts "5 skills created"
       title: Faker::Internet.domain_name,
       subtitle: Faker::Hacker.adjective,
       body: Faker::Hacker.say_something_smart,
-      main_image: Faker::LoremPixel.image,
-      thumb_image: Faker::LoremPixel.image("50x60")
+      main_image: Faker::Placeholdit.image("600x400", 'jpg'),
+      thumb_image: Faker::Placeholdit.image("350x200", 'jpg')
     )
 end
 
