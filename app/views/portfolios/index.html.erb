@@ -6,6 +6,10 @@
   <p><%= portfolio_item.body %></p>
   <%= image_tag(portfolio_item.thumb_image ||=
                 Faker::Placeholdit.image("350x200", 'jpg')) %>
+  <br>
+  <button><%= link_to "display", portfolio_path(portfolio_item) %></button>
+  <button><%= link_to "edit", edit_portfolio_path(portfolio_item) %></button>
+  <button><%= link_to "remove", portfolio_path(portfolio_item), method: :delete %></button>
 <% end %>
 
 
