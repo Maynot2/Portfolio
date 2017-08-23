@@ -1,0 +1,13 @@
+<p><%= notice %></p>
+
+<h1><%= @portfolio_item.title %></h1>
+
+<h2><%= @portfolio_item.subtitle %></h2>
+
+<p><%= @portfolio_item.body %></p>
+
+<%= image_tag @portfolio_item.main_image unless @portfolio_item.main_image.nil? %>
+
+<p><%= link_to "back to index", portfolios_path %></p>
+
+
