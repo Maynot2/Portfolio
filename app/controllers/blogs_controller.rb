@@ -56,14 +56,20 @@ class BlogsController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_blog
-      @blog = Blog.friendly.find(params[:id])
-    end
+  def toggle_status
+    blog = Blog.friendly.find(params[:id])
+    blog.published? ? blog.draft! : blog.published!
+    redirect_to blogs_url
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def blog_params
-      params.require(:blog).permit(:title, :body)
-    end
+    private
+      # Use callbacks to share common setup or constraints between actions.
+      def set_blog
+        @blog = Blog.friendly.find(params[:id])
+      end
+
+      # Never trust parameters from the scary internet, only allow the white list through.
+      def blog_params
+        params.require(:blog).permit(:title, :body)
+      end
 end
